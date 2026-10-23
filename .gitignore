@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# extracted frames / built videos — do not commit
+frames/
+*.mp4
+*.avi
+*.mov
