@@ -1,10 +1,28 @@
-__pycache__/
-*.pyc
-.venv/
-venv/
+# Qt Creator generated
+*.pro.user
+*.pro.user.*
+*.autosave
+CMakeLists.txt.user*
 
-# extracted frames / built videos — do not commit
-frames/
-*.mp4
-*.avi
-*.mov
+# Build output
+debug/
+release/
+build-*/
+*.o
+*.obj
+*moc_preprocess.inc
+moc_*.cpp
+ui_*.h
+qrc_*.cpp
+Makefile
+Makefile.Debug
+Makefile.Release
+*.exe
+*.exe.stackdump
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+Thumbs.db
+Desktop.ini
