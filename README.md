@@ -1,6 +1,21 @@
 # video_frame_handle
 qtopencv视频拆分为图片帧，帧合成视频（mp4，avi）
 
+## 命令行总入口（不需要装 Qt）
+`cli_main.cpp` 是一个控制台菜单版，把下面四个功能全收进去：
+1. 自定义时间段拆帧
+2. 等长分段拆帧
+3. 截取单帧
+4. 图片序列合成视频
+
+编译（只依赖 OpenCV）：
+```bash
+g++ cli_main.cpp -o slice_cli.exe -I"<opencv>/include" -L"<opencv>/x86/mingw/lib" \
+    -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_highgui
+```
+运行后按菜单提示输入路径和参数即可。
+
+
 拆帧分为三种模式：
 
  - 自定义拆帧（指定开始时刻和结束时刻，并拆分为图片帧）
