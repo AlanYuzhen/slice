@@ -1,4 +1,4 @@
-# setup.ps1 —— 一键装依赖：Python + Qt5(MSVC) + VS Build Tools + OpenCV
+﻿# setup.ps1 —— 一键装依赖：Python + Qt5(MSVC) + VS Build Tools + OpenCV
 # 用法：右键“使用 PowerShell 运行”，或在管理员 PowerShell 里跑 .\setup.ps1
 # 第一次运行会下载几个 GB，耐心等。
 
