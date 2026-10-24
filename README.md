@@ -1,19 +1,24 @@
 # video_frame_handle
 qtopencv视频拆分为图片帧，帧合成视频（mp4，avi）
 
-## 命令行总入口（不需要装 Qt）
-`cli_main.cpp` 是一个控制台菜单版，把下面四个功能全收进去：
-1. 自定义时间段拆帧
-2. 等长分段拆帧
-3. 截取单帧
-4. 图片序列合成视频
+## 一键装依赖
+双击 `setup.bat`（或管理员 PowerShell 跑 `./setup.ps1`），自动装：
+Python → aqtinstall → Qt 5.15.2(MSVC2019 64位) → VS Build Tools 2022 → OpenCV 4.10，并自动设置 `OPENCV_DIR` 环境变量。第一次会下载几个 GB。
 
-编译（只依赖 OpenCV）：
-```bash
-g++ cli_main.cpp -o slice_cli.exe -I"<opencv>/include" -L"<opencv>/x86/mingw/lib" \
-    -lopencv_core -lopencv_imgcodecs -lopencv_videoio -lopencv_highgui
+## 总入口
+程序启动后先打菜单：
 ```
-运行后按菜单提示输入路径和参数即可。
+1. 打开图形界面程序 (Qt 窗口)
+2. 命令行拆帧菜单
+   （自定义时间段拆帧 / 等长分段拆帧 / 截取单帧 / 图片合成视频）
+0. 退出
+```
+- `main.cpp`：总入口菜单。
+- `gui_main.cpp`：原 Qt 图形界面（satellite_video 主窗 + Frame_Handle_Form 四个模式）。
+- `cli_menu.cpp`：命令行版四个拆帧模式，和 GUI 里一一对应。
+- 快捷参数：`video_handel.exe --gui` 直接开窗口；`video_handel.exe --cli` 直接进命令行菜单。
+
+编译：用 Qt Creator 打开 `video_handel.pro`，选 MSVC2019 64-bit Kit，构建运行。
 
 
 拆帧分为三种模式：
